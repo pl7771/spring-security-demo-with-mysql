@@ -32,10 +32,9 @@ public class DemoSecurityConfig
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.authorizeRequests()
-			//.anyRequest().authenticated()
-			.antMatchers("/").hasRole("employee")
-			.antMatchers("/leaders/**").hasRole("manager")
-			.antMatchers("/admins/**").hasRole("admin")
+			.antMatchers("/").hasRole("EMPLOYEE")
+			.antMatchers("/leaders/**").hasRole("MANAGER")
+			.antMatchers("/admins/**").hasRole("ADMIN")
 			.and()
 				.formLogin()
 				.loginPage("/showMyLoginPage")

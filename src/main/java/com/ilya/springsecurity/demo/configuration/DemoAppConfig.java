@@ -72,7 +72,13 @@ public class DemoAppConfig {
 	
 	//need a helper method
 	//read environment property and convert to int
-	private int getIntProperty(String propName) {
-		return Integer.parseInt(env.getProperty(propName));
-	}	
+private int getIntProperty(String propName) {
+		
+		String propVal = env.getProperty(propName);
+		
+		// now convert to int
+		int intPropVal = Integer.parseInt(propVal);
+		
+		return intPropVal;
+	}
 }
